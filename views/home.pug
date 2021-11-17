@@ -2,6 +2,11 @@ doctype html
 html
     head
         title Buscador Pelicula
+        link(rel="stylesheet", href="./style/style.css")
     body 
         div
-            p ESTAS EN LA HOME Y FUNCIONAS 
+            form#buscador(action="/buscar" method="post")
+                label(for="buscador") Introduce el nombre de la pelicula.
+                br
+                input#laBusqueda(type="text" name="Un buscador")
+                input(type="submit" value="Buscar")   

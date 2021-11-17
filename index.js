@@ -1,25 +1,22 @@
+/***************Dependencias***************/
 const express = require('express')
-const app = express()
+const fetch = require('./utils/fetch')
 
+/***************Express***************/
+const app = express()
+app.use(express.json()); //Permite el envio de JSON al servidor
+app.use(express.static('public')) //Habilitar los archivos para que sean estaticos
+/************ Activar Pug ************/
 app.set('view engine', 'pug'); // Especifico el motor de plantillas
 app.set('views','./views'); 
-app.use(express.json());
 
- 
+/************ Rutas ************/
+
 app.get('/', function (req, res) {
-  res.render('home')
+  res.render('home');
 })
 
 
-
-// app.get('/', function (req, res) {
-//     res.send('Hello World')
-//   })
-
-
-//   app.get('/', function (req, res) {
-//     res.send('Hello World')
-//   })
 
 
 
