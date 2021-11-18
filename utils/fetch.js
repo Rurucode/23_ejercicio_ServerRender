@@ -10,7 +10,7 @@ const buscarPelicula = async (nombre) => {
         const data = await fetch(`http://www.omdbapi.com/?t=${nombre}&apikey=eca8b041`);
         const result = await data.json();
         // console.log(result.Title);
-        const filtradosss = {
+        const filtrado = {
             titulo: result.Title,
             year: result.Year,
             director: result.Director,
@@ -18,7 +18,7 @@ const buscarPelicula = async (nombre) => {
             imagen: result.Poster
         }
     
-        return filtradosss;
+        return filtrado;
     }
     catch(error){
         console.log(`No ha funcionado la llamada al fetch ${error}`);

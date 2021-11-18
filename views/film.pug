@@ -2,10 +2,11 @@ doctype html
 html
     head
         title Detalles Pelicula
+        link(rel='stylesheet', href='/css/style.css')
     body 
-        div
+        div#laPelicula
             p Titulo: #{Title}
             p #{Year}
+            img(src=urlImagen, alt="La imagen de la pelicula")
             p #{Director}
             p #{Descripcion}
-            img(src=urlImagen, alt="La imagen de la pelicula")

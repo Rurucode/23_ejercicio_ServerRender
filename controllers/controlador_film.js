@@ -20,11 +20,15 @@ const film_controlador = {
         console.log(req.params);
         let infoPelicula = await buscarPelicula(req.params.titulo)
         console.log(infoPelicula)
-        await res.render('film', {Title: infoPelicula.titulo,
+        await res.render('film', {
+            Title: infoPelicula.titulo,
             Year: infoPelicula.year,
-            urlImagen: infoPelicula.imagen});
+            urlImagen: infoPelicula.imagen,
+            Director: infoPelicula.director,
+            Descripcion: infoPelicula.descripcion
+        });
     }
 
 }
 
-module.exports = film_controlador;c
+module.exports = film_controlador;
