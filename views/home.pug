@@ -5,8 +5,8 @@ html
         link(rel="stylesheet", href="./style/style.css")
     body 
         div
-            form#buscador(action="/buscar" method="post")
+            form#buscador(action="/" method="post")
                 label(for="buscador") Introduce el nombre de la pelicula.
                 br
-                input#laBusqueda(type="text" name="Un buscador")
+                input#laBusqueda(type="text" name="titulo")
                 input(type="submit" value="Buscar")   

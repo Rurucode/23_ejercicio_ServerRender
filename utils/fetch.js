@@ -1,20 +1,36 @@
 const fetch = require('node-fetch');
 
-const apiKey = "eca8b041";
+
+// const apiKey = "eca8b041";
 
 // http://www.omdbapi.com/?t=avatar&apikey=eca8b041
 
 const buscarPelicula = async (nombre) => {
     try{
-        const data = await fetch(`http://www.omdbapi.com/?t=${nombre}&apikey=${apiKey}`);
+        const data = await fetch(`http://www.omdbapi.com/?t=${nombre}&apikey=eca8b041`);
         const result = await data.json();
-        return result;
+        // console.log(result.Title);
+        const filtradosss = {
+            titulo: result.Title,
+            year: result.Year,
+            director: result.Director,
+            descripcion: result.Plot,
+            imagen: result.Poster
+        }
+    
+        return filtradosss;
     }
     catch(error){
         console.log(`No ha funcionado la llamada al fetch ${error}`);
     }
 }
-
+// buscarPelicula('avatar');
 module.exports = buscarPelicula;
 
-// buscarPelicula("bad boys").then(data=>{console.log(data)});
+// buscarPelicula("bad boys").then(data=>{
+//     let obj = {
+//         Title: data.Title,
+//         Year: data.Year,
+//         Director: data.Director
+//     }
+//     console.log(obj)});
